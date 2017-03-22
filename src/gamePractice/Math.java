@@ -1,5 +1,7 @@
 package gamePractice;
 
+import java.util.*;
+
 public class Math {
 	
 	private int playerNum;
@@ -56,7 +58,74 @@ public class Math {
 //	private boolean isAnswerCorrect = false; // determine whether or not the player's answer is correct
 //	
 	
-	private void setRange(){
+	public void setRange(int num1, int num2){
 		
 	}
+	
+	
+	
+	
+	public int addition(int playerNum, int monsterNum, int playerAnswer){
+		correctAnswer =  playerNum + monsterNum;
+		System.out.println("The correct answer is: " + correctAnswer);
+		if (playerAnswer == correctAnswer)
+		{
+			System.out.println("YOUR ANSWER IS CORRECT!!!");
+		}
+		else System.out.println("YOUR ANSWER IS INCORRECT SORRY!!!");
+		return correctAnswer;
+	} // addition for game
+	
+	public int subtraction(int playerNum, int monsterNum, int playerAnswer){
+		correctAnswer =  playerNum - monsterNum;
+		System.out.println("The correct answer is: " + correctAnswer);
+		if (playerAnswer == correctAnswer)
+		{
+			System.out.println("YOUR ANSWER IS CORRECT!!!");
+		}
+		else System.out.println("YOUR ANSWER IS INCORRECT SORRY!!!");
+		return correctAnswer;
+	} // addition for game
+	
+	public int multiplication(int playerNum, int monsterNum, int playerAnswer){
+		correctAnswer =  playerNum * monsterNum;
+		System.out.println("The correct answer is: " + correctAnswer);
+		if (playerAnswer == correctAnswer)
+		{
+			System.out.println("YOUR ANSWER IS CORRECT!!!");
+		}
+		else System.out.println("YOUR ANSWER IS INCORRECT SORRY!!!");
+		return correctAnswer;
+	} // addition for game
+	
+	public void division()
+	{
+		Scanner in = new Scanner(System.in);
+		int playerAns;
+		Random divisorGenerator = new Random();
+		Random dividendGenerator = new Random();
+		
+		int divisor = divisorGenerator.nextInt(10) + 1;
+		int dividend = dividendGenerator.nextInt(82);
+		int quotient;
+		
+		while(dividend % divisor != 0)
+		{
+			dividend = dividendGenerator.nextInt(82);
+		}
+		System.out.println("Your number is: " + dividend + "\n" + "The monster's number is: " + divisor + 
+								"\n What is: " + dividend + " / " + divisor + ": \n");
+		playerAns = in.nextInt();
+		quotient = dividend / divisor;
+		System.out.println("The correct answer is: " + quotient);
+		if (playerAns == quotient)
+		{
+			System.out.println("YOUR ANSWER IS CORRECT!!!");
+		}
+		else System.out.println("YOUR ANSWER IS INCORRECT SORRY!!!");
+	}
+	
+	
+	
+	
 }

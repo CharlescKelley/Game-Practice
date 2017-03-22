@@ -1,5 +1,8 @@
 package gamePractice;
 
+import java.util.*;
+
+
 public class GameMain {
 
 	public static void main(String[] args) {
@@ -55,6 +58,66 @@ public class GameMain {
 		/* checkpoint = Places where the player will start over if they die, before they have
 		 * 		3 deaths. 
 		 */
+		
+		/*This isn't what the actual code is going to look like most likely. This is just to test whether or not
+		 * 		the math class is even remotely working.
+		 * 
+		 */
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Would you like to start the Math class test?");
+		String startGame = in.nextLine();
+		Math math = new Math();
+		
+		if (startGame != "Y")
+		{
+			System.out.println("Which math problem would you like? \n Please choose either: " + 
+									"'a' = addition \n 's' = subtraction \n 'm' = multiplication \n 'd' = devision");
+			String gameType = in.nextLine();
+			int userAnswer;
+			Random playerNumGen = new Random();
+			Random monsterNumGen = new Random();
+			int player;
+			int monster;
+			
+			switch(gameType)
+			{
+			case "a": 
+				player = playerNumGen.nextInt(10);
+				monster = monsterNumGen.nextInt(10);
+				System.out.println("Your number is: " + player + ".\n The monster's number is: " + monster + ".\n What is: " + 
+										player + " + " + monster + " = \n");
+				userAnswer = in.nextInt();
+				math.addition(player, monster,userAnswer);
+				break;
+			case "s":
+				player = playerNumGen.nextInt(10);
+				monster = monsterNumGen.nextInt(10);
+				System.out.println("Your number is: " + player + ".\n The monster's number is: " + monster + ".\n What is: " + 
+										player + " - " + monster + " = \n");
+				userAnswer = in.nextInt();
+				math.subtraction(player, monster,userAnswer);
+				break;
+			case "m":
+				player = playerNumGen.nextInt(10);
+				monster = monsterNumGen.nextInt(10);
+				System.out.println("Your number is: " + player + ".\n The monster's number is: " + monster + ".\n What is: " + 
+										player + " * " + monster + " = \n");
+				userAnswer = in.nextInt();
+				math.multiplication(player, monster,userAnswer);
+				break;
+			case "d":
+				math.division();
+				break;
+			default :
+				System.out.println("Program will exit sense nothing was selected.");
+				break;
+			}
+		}
+		else System.out.println("The test will not start then.");
+
+		System.exit(0);
 	}
+	
 
 }

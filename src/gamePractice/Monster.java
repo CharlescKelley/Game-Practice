@@ -21,8 +21,23 @@ public class Monster {
 	 * 		
 	 */
 	
-	int name;
+	String name;
 	
 	/*	name = The name of the monster to be displayed during battle
 	 */
+	
+	public Monster(String monsterName, int monsterHealth, int monsterDamage) 
+	{
+		name = monsterName;
+		health = monsterHealth;
+		damage = monsterDamage;
+	}
+	
+	public int monsterDamageModifier(int damage, int numOfIncorrectAns)
+	{
+		damage += ((damage / numOfIncorrectAns) / 100);
+		
+		return damage;
+	}
+	
 }

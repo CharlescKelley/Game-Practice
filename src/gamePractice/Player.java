@@ -2,6 +2,8 @@ package gamePractice;
 
 public class Player {
 
+	
+
 	int health;
 	
 	/*	health = The health of the player. Will level up with the player and
@@ -21,7 +23,7 @@ public class Player {
 	 * 		answers (most likely 3)
 	 */
 	
-	int name;
+	String name;
 	
 	/*	name = The name the player chooses for their character
 	 */
@@ -32,4 +34,19 @@ public class Player {
 	 * 		start at 3 and decrease upon death until 0. Once at 0 the player will have
 	 * 		to start back at previous checkpoint.
 	 */
+	
+	public Player(String playerName, int playerHealth, int playerDamage, int playerLives) 
+	{
+		name = playerName;
+		health = playerHealth;
+		damage = playerDamage;
+		lives = playerLives;
+	}
+	
+	public int playerDamageModifier(int damage, int numOfCorrectAns)
+	{
+		damage += ((damage / numOfCorrectAns) / 100);
+		
+		return damage;
+	}
 }
